@@ -29,7 +29,10 @@ class BaseTkContainer:
         self.volumeScale.set(50)
 
     def onCloseWindow(self):
-        self.mediaPlayer.stop()
+        try:
+            self.mediaPlayer.stop()
+        except:
+            pass
         self.tk_instance.destroy()
     
     def MovieVolume(self, setValue):
